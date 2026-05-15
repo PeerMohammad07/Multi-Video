@@ -6,9 +6,17 @@ const VideoGrid = ({ streams, activeAudioId, onToggleMute, onRemove }) => {
   if (streams.length === 0) {
     return (
       <div className="empty-state">
-        <MonitorPlay className="empty-state-icon" />
-        <h2>No streams added yet</h2>
-        <p>Paste a YouTube or Twitch link above to start watching</p>
+        <div className="css-animation-container">
+          <div className="anim-grid">
+            <div className="anim-item anim-1"><MonitorPlay size={32} strokeWidth={1.5} /></div>
+            <div className="anim-item anim-2"><MonitorPlay size={32} strokeWidth={1.5} /></div>
+            <div className="anim-item anim-3"><MonitorPlay size={32} strokeWidth={1.5} /></div>
+            <div className="anim-item anim-4"><MonitorPlay size={32} strokeWidth={1.5} /></div>
+          </div>
+          <div className="anim-glow"></div>
+        </div>
+        <h2 className="empty-state-title">Ready to Multistream</h2>
+        <p className="empty-state-subtitle">Paste a YouTube, Twitch, or direct video link above to build your ultimate viewing grid.</p>
       </div>
     );
   }
